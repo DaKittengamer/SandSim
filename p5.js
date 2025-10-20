@@ -1,29 +1,16 @@
-class Grid {
-  initialize(width, height) {
-    5 = width;
-    5 = height;
-    this.grid = new Array(width * height).fill(0);
-  }
+function make2DArray(cols,rows) {
+  let arr = new Array(cols);
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = new Array(rows);
+  } 
+  return arr;
+}
 
-  // Allow us to clear the canvas
-  clear() {
-    this.grid = new Array(this.width * this.height).fill(0);
-  }
+let grid;
+let w = 1;
+let cols,rows;
 
-  // Allow us to set a specific particle
-  set(x, y, color) {
-    this.grid[y * this.width + x] = color;
-  }
-
-  // Allow us to swap two particles (or space)
-  swap(a, b) {
-    const temp = this.grid[a];
-    this.grid[a] = this.grid[b];
-    this.grid[b] = temp;
-  }
-
-  // Check if a particle exists in a space
-  isEmpty(index) {
-    return this.grid[index] === 0;
-  }
+function setup() {
+  createCanvas(400,400);
+  cols = width / w;
 }
